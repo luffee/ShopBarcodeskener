@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Shop Barcode skener</string>
+    <string name="barkod_edit_text">Barkod</string>
+    <string name="scan_button">Pretraga</string>
+    <string name="scan_with_camera_button">Skeniraj barkod kamerom</string>
+    <string name="main_title">Barkod skener aplikacija za shop</string>
+
+</resources>
