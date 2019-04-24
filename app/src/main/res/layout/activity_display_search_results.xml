@@ -19,6 +19,7 @@
         android:textAlignment="viewStart"
         android:textSize="24sp"
         android:verticalScrollbarPosition="right"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,7 +35,8 @@
         app:layout_constraintBottom_toTopOf="@+id/textViewSearchResult"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/textViewProduct"
@@ -43,8 +45,10 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="24dp"
         android:text="@string/productName"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewSearchResult" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewSearchResult"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/textViewProductName"
@@ -64,8 +68,9 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="24dp"
         android:text="@string/sku"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewProduct" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewProductName" />
 
     <TextView
         android:id="@+id/textViewSkuField"
@@ -85,8 +90,9 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="24dp"
         android:text="@string/price_tag"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewSku" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewSkuField" />
 
     <TextView
         android:id="@+id/TextViewPriceField"
@@ -98,4 +104,35 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textViewPrice"
         app:layout_constraintTop_toBottomOf="@+id/textViewSkuField" />
+
+
+
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="383dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TextViewPriceField">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:layout_editor_absoluteX="141dp"
+                tools:layout_editor_absoluteY="289dp"
+                tools:srcCompat="@tools:sample/avatars" />
+        </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
