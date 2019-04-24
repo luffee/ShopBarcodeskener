@@ -4,5 +4,6 @@
     <string name="scan_button">Pretraga</string>
     <string name="scan_with_camera_button">Skeniraj barkod kamerom</string>
     <string name="main_title">Barkod skener aplikacija za shop</string>
+    <string name="website">https://www.srecniljudi.com/api/search?s=</string>
 
 </resources>
