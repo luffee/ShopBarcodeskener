@@ -1,4 +1,4 @@
-package com.example.shopbarcodeskener;
+package com.nesa.shopbarcodeskener;
 
 import org.junit.Test;
 

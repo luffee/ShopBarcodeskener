@@ -1,7 +1,6 @@
-package com.example.shopbarcodeskener;
+package com.nesa.shopbarcodeskener;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.view.View;
@@ -21,9 +20,6 @@ import com.squareup.picasso.Picasso;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.net.URI;
-import java.net.URL;
 
 public class DisplaySearchResults extends AppCompatActivity {
     public String searchResults = "ccc";
