@@ -35,7 +35,15 @@ public class DisplaySearchResults extends AppCompatActivity {
         TextView testView = findViewById(R.id.textViewTest);
         testView.setText(search);
 
+        final TextView textViewProduct = findViewById(R.id.textViewProductName);
+
+        final TextView textViewSku = findViewById(R.id.textViewSkuField);
+
+        final TextView textViewPrice = findViewById(R.id.TextViewPriceField);
+
         JSONArray jsonObject;
+
+
 
 
 
@@ -48,12 +56,18 @@ public class DisplaySearchResults extends AppCompatActivity {
                     public void onResponse(String response) {
                         // Display the first 500 characters of the response string.
                         searchResults = response;
+                        Double price = 0.0;
                         try {
                             JSONObject jsonObjectTemp = new JSONObject(searchResults);
                             JSONArray jsonArray = jsonObjectTemp.getJSONArray("records");
                             for (int i = 0; i < 1; i++) {
                                 JSONObject explrObject = jsonArray.getJSONObject(i);
+
                                 textView.setText(explrObject.toString());
+                                textViewProduct.setText(explrObject.getString("name"));
+                                textViewSku.setText(explrObject.getString("sku"));
+                                price = Math.ceil(explrObject.getDouble("price") * 1.2); //with tax
+                                textViewPrice.setText(price.toString());
                             }
                         } catch (JSONException e) {
                             //TODO
