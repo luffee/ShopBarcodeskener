@@ -68,7 +68,7 @@ public class DisplaySearchResults extends AppCompatActivity {
                                 testView.setVisibility(View.GONE);
                                 textViewProduct.setText(explrObject.getString("name"));
                                 textViewSku.setText(explrObject.getString("sku"));
-                                price = Math.ceil(explrObject.getDouble("price") * 1.2/10)*10; //with tax
+                                price = Math.ceil(explrObject.getDouble("price") * 1.20); //with tax
                                 textViewPrice.setText(price.toString());
                                 String url = "https://www.srecniljudi.com/" + explrObject.getString("url_thumb");
 
