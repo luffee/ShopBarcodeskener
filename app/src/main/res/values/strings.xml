@@ -7,6 +7,6 @@
     <string name="website">https://www.srecniljudi.com/api/search?s=</string>
     <string name="productName">Naziv Proizvoda:</string>
     <string name="sku">Barkod/sifra</string>
-    <string name="price_tag">cena</string>
+    <string name="price_tag">Cena</string>
 
 </resources>

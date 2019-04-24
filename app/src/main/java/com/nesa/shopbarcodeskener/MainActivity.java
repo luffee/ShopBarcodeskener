@@ -27,9 +27,14 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, DisplaySearchResults.class);
         EditText editText = findViewById(R.id.editTextSearchInput);
         String message = editText.getText().toString();
-        String search = baseUrl + message;
-        intent.putExtra(SEARCH_MESSAGE, search);
-        startActivity(intent);
+
+        if (message.length() > 4){
+
+            String search = baseUrl + message;
+            intent.putExtra(SEARCH_MESSAGE, search);
+            startActivity(intent);
+        }
+
 
     }
 

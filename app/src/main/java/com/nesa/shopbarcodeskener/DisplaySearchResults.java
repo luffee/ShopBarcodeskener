@@ -1,6 +1,7 @@
 package com.nesa.shopbarcodeskener;
 
 import android.content.Intent;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.view.View;
@@ -46,6 +47,8 @@ public class DisplaySearchResults extends AppCompatActivity {
 
         final ImageView imageView = findViewById(R.id.imageView);
 
+        final TextView priceView = findViewById(R.id.textViewPrice);
+
 
 
         RequestQueue requestQueue = Volley.newRequestQueue(this);
@@ -70,6 +73,18 @@ public class DisplaySearchResults extends AppCompatActivity {
                                 textViewSku.setText(explrObject.getString("sku"));
                                 price = Math.ceil(explrObject.getDouble("price") * 1.20); //with tax
                                 textViewPrice.setText(price.toString());
+
+                                if (explrObject.getInt("override") > 0 ){
+
+                                    Double tempPrice = explrObject.getDouble("discount");
+                                    textViewPrice.setText(tempPrice.toString());
+                                    priceView.setText(price.toString());
+                                    priceView.setPaintFlags(textView.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+
+                                } else {
+                                    textViewPrice.setText(price.toString());
+                                }
+
                                 String url = "https://www.srecniljudi.com/" + explrObject.getString("url_thumb");
 
 
