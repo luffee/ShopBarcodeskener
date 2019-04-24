@@ -1,7 +1,9 @@
 package com.nesa.shopbarcodeskener;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.SparseArray;
+import android.widget.EditText;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,6 +15,8 @@ import com.google.android.gms.vision.barcode.Barcode;
 import java.util.List;
 
 import xyz.belvi.mobilevisionbarcodescanner.BarcodeRetriever;
+
+import static com.nesa.shopbarcodeskener.MainActivity.SEARCH_MESSAGE;
 
 public class Skener extends AppCompatActivity implements BarcodeRetriever {
 
@@ -29,6 +33,15 @@ public class Skener extends AppCompatActivity implements BarcodeRetriever {
 
     @Override
     public void onRetrieved(final Barcode barcode) {
+        Intent intent = new Intent(this, DisplaySearchResults.class);
+        //EditText editText = findViewById(R.id.editTextSearchInput);
+        String message = barcode.displayValue;
+        String baseUrl = "https://srecniljudi.com/api/product/search.php?s=";
+        String search = baseUrl + message;
+        intent.putExtra(SEARCH_MESSAGE, search);
+        startActivity(intent);
+
+        /*
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -37,7 +50,7 @@ public class Skener extends AppCompatActivity implements BarcodeRetriever {
                         .setMessage(barcode.displayValue);
                 builder.show();
             }
-        });
+        });*/
 
     }
 
